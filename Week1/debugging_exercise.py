@@ -2,9 +2,10 @@ import random
 
 # pick a random number for the user to guess
 rand = random.randint(1, 20)
-
+number_of_guesses = 0
 print('Guess a number between 1 and 20.')
-guess = int(input())  # number needs to be an integer
+guess = int(input())# number needs to be an integer
+number_of_guesses += 1
 
 while guess != rand:  # if the guess is not equal to the random number, you have to guess again
     if guess > rand:  # if the guess is too high, tell the user.
@@ -14,5 +15,6 @@ while guess != rand:  # if the guess is not equal to the random number, you have
 
     print('Enter a new guess: ')
     guess = int(input())
+    number_of_guesses += 1
 
-print('You got it! The number was {}'.format(rand))
+print('You got it! The number was {} and you took {} to guess correctly!'.format(rand, number_of_guesses))
